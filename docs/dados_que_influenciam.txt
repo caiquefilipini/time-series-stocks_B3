@@ -1,0 +1,9 @@
+período: desde janeiro de 2010
+
+- preços históricos das ações
+- indicadores fundamendalistas (balanço)
+- notícias da empresa
+- notícias do brasil (economia / política)
+- notícias do mundo
+- indicadores macro e micro econômicos (brasil)
+- indicadores macro e micro econômicos (global)
