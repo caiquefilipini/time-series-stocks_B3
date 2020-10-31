@@ -1,0 +1,19 @@
+ideias do projeto:
+
+objetivo: fornecer carteiras recomendadas de ações
+
+resultados: fazer uma simulação e comparar com:
+
+	- outros fundos de investimento
+	- o ibovespa
+	- a renda fixa
+	- a poupança
+
+criar um ambiente para armazenar os dados	
+
+criar um painel no Power BI que mostra os resultados e as recomendações do dia que atualiza automaticamente diariamente
+
+próximos passos:
+
+	- adicionar um minerador de sentimentos para analisar as notícias e usar como variável do modelo principal
+	- criar um modelo para recomendar fundos imobiliarios

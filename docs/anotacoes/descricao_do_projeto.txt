@@ -1,0 +1,64 @@
+- Objetivo:
+
+Qual o objetivo do trabalho?
+Qual público ou produto serão considerados?
+Quais dados serão utilizados?
+Qual será o caminho técnico para resolução?
+Como seus resultados serão utilizados pelo negócio?
+
+O objetivo deste trabalho é o desenvolvimento de uma aplicação que leia diariamente os dados do mercado financeiro, faça a predição dos preços das ações das empresas para um determinado período futuro e, com isso, recomende uma carteira de ativos que obtenha resultados superiores à Selic e ao Ibovespa ao longo do tempo.
+
+É esperado ao final do projeto, portanto, obter-se um dashboard, de atualização diária e automática, que contenha, além da carteira recomendada pelo modelo preditivo, os principais indicadores e resultados.
+
+Este projeto irá considerar, para efeito de predição do modelo, somente as ações das empresas listadas na bolsa de valores de São Paulo (B3).
+
+Para isso, serão utilizadas as bases de dados históricos (séries temporais) dos preços das ações das empresas, de indicadores macroeconômicos contidos no site do Banco Central do Brasil (IPCA, Selic, dólar, etc.), da perfomance do índice Ibovespa, dos dados fundamentalistas das empresas (lucro, endividamento, ROE, etc.) e de distribuições de dividendos e JCP (juros sobre capital próprio).
+
+Para extrair os dados, serão utilizadas técnicas de Web Scrapping e requisições de dados por meio de API (quando disponibilizada pela fonte). Para criar o modelo preditivo, serão aplicadas, inicialmente, as técnicas tradicionais de séries temporais (ARIMA, SARIMA, etc.), e posteriormente o problema será abordado com modelos mais robustos e sofisticados para tratamento de padrões sequenciais, como: discretização da série temporal para aplicação de algoritmos de Machine Learning; e Deep Learning (com LSTM).
+
+############################################################################################
+
+- Contextualização:
+
+Por que o projeto foi socilitado?
+Quais desafios estão sendo enfretados pela empresa?
+Por que é importante resolver este problema?
+O que a empresa ganha com projeto?
+Quais serão as áreas beneficiadas?
+Quais são os benefícios?
+
+O mercado financeiro, conhecido por sua volatilidade, é fortemente influenciado por diversos fatores, vários deles qualitativos e aleatórios, o que dificulta muito a previsão dos preços das ações. Qualquer movimentação política inesperada, por exemplo, poderia causar uma queda brusca generalizada nos ativos da bolsa. Por outro lado, uma notícia de que uma vacina para uma doença crítica teria sido desenvolvida, fortaleceria a confiança dos investidores na economia, implicando diretamente em uma valorização do mercado financeiro. Além do ambiente interno, este setor também é muito sensível aos indicadores estrangeiros, principalmente de países como os EUA. Por isso, prever o preço das ações das empresas torna-se uma tarefa extremamente complexa e desafiadora.
+
+Contudo, transferindo para os algoritmos apenas tarefa de encontrar padrões e tendências nos indicadores gerais do mercado financeiro, o ser humano poderia investir seu tempo avaliando outras variáveis que a máquina não consegue capturar. Desta forma, as saídas preditivas do modelo funcionariam não como soberanas e decisivas, mas sim como uma espécie de consultor do ser humano, contribuindo e agregando valor na tarefa de compra e venda das ações.
+
+############################################################################################
+
+- Os Dados:
+
+Para o desenvolvimento deste projeto, é necessário um período significativo de dados. Contudo, datas exageradamente distantes possuem pouca influência no cenário atual. E a influência que possuem, estão representadas, em grande parte, em dados relativamente mais recentes. Sendo assim, a fim de se obter volume suficiente para treinar, validar e testar os modelos, serão extraídos dados a partir de 01/01/2010.
+
+A base de dados principal é composta pelas colunas:
+
+	- Date	 - Data da negociação
+	- Open	 - Preço de abertura
+	- High	 - Maior preço atingido
+	- Low	 - Menor preço atingido
+	- Close	 - Preço de fechamento
+	- Volume - Volume negociado
+	- Ticker - Código da empresa
+
+Quantidade de ações listadas na B3: 	   328
+Quantidade de dias no período considerado: 2.569
+Quantidade máxima* de registros:  	   842.632
+
+*Como não são, necessariamente, todas as ações listadas na bolsa de valores que possuem capital aberto desde o início do período considerado, esta é a quantidade máxima possível de registros que a base geral pode ter.
+
+Observações:
+
+	1. A base descrita acima é a base principal. Contudo, ao longo do desenvolvimento, é possível que mais bases de dados sejam extraídas a fim de agregar valor ao projeto, como por exemplo:
+
+	- dados históricos fundamentalistas das empresas
+	- dados históricos de distribuição de dividendos e JCP
+	- indicadores macroeconômicos históricos (ex: Selic, IPCA, dólar, etc.)
+
+	2. Também é possível, para efeito de simplificação do trabalho e possibilidade de processamento e armazenamento em computador tradicional, que se limite a quantidade de ações analisadas de acordo com algum critério.
